@@ -1,6 +1,6 @@
-# Minyang-s-Personal_Web
-Nice to meet u!I'm Minyang,a student in SWUFE-UD
-这是我的简洁个人简历网站，展示个人信息、技能和联系方式。
+# 蒋旻阳 - 个人简历网站
+
+一个简约现代风格的个人简历网站，展示个人信息、技能和联系方式。
 
 ## 功能
 - 📷 个人信息展示（照片+基本信息）
@@ -30,4 +30,3 @@ personal_web/
 │   └── resume/      # 简历PDF
 └── README.md        # 项目说明
 ```
-
