@@ -10,6 +10,7 @@
     --secondary-color: #1e293b;
     --text-color: #1f2937;
     --light-bg: #f8fafc;
+    --card-bg: #ffffff;
     --border-color: #e2e8f0;
     --shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
     --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -20,6 +21,43 @@ body {
     line-height: 1.6;
     color: var(--text-color);
     background-color: #ffffff;
+}
+
+body.dark-mode {
+    --primary-color: #60a5fa;
+    --secondary-color: #e2e8f0;
+    --text-color: #f8fafc;
+    --light-bg: #1f2937;
+    --card-bg: #111827;
+    --border-color: #334155;
+    background-color: #0f172a;
+}
+
+body.dark-mode .navbar {
+    background-color: #111827;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.45);
+}
+
+body.dark-mode .nav-links a {
+    color: var(--text-color);
+}
+
+body.dark-mode .nav-links a:hover {
+    color: var(--primary-color);
+}
+
+body.dark-mode .hero,
+body.dark-mode .about,
+body.dark-mode .skills,
+body.dark-mode .projects,
+body.dark-mode .contact,
+body.dark-mode .project-card,
+body.dark-mode .contact-item {
+    background-color: var(--card-bg);
+}
+
+body.dark-mode .footer {
+    background-color: #0f172a;
 }
 
 .container {
@@ -65,6 +103,27 @@ body {
 
 .nav-links a:hover {
     color: var(--primary-color);
+}
+
+.theme-toggle {
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    color: var(--text-color);
+    border-radius: 999px;
+    padding: 10px 16px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+.theme-toggle:hover {
+    background-color: var(--light-bg);
+}
+
+body.dark-mode .theme-toggle {
+    border-color: var(--border-color);
+    background-color: #1f2937;
+    color: var(--text-color);
 }
 
 /* ========== 主区域 ========== */
@@ -170,6 +229,88 @@ main {
     font-size: 16px;
     line-height: 1.8;
     color: #4b5563;
+}
+
+/* ========== 技能与项目 ========== */
+.skills,
+.projects {
+    background-color: var(--light-bg);
+    padding: 60px;
+    border-radius: 12px;
+    margin: 60px 0;
+    border-left: 4px solid var(--primary-color);
+}
+
+.skills h2,
+.projects h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.skills-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.skill-pill {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background-color: white;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    font-weight: 600;
+}
+
+body.dark-mode .skill-pill {
+    background-color: #1f2937;
+    border-color: #334155;
+    color: #f8fafc;
+    box-shadow: none;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.project-card {
+    background-color: white;
+    border: 2px solid var(--border-color);
+    border-radius: 16px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--primary-color);
+}
+
+.project-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+    color: var(--secondary-color);
+}
+
+.project-card p {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #475569;
+}
+
+.project-meta {
+    margin-top: 16px;
+    font-size: 14px;
+    color: var(--primary-color);
+    font-weight: 600;
 }
 
 /* ========== 联系方式 ========== */

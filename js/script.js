@@ -16,6 +16,32 @@ if (downloadBtn) {
     });
 }
 
+// 主题切换功能
+const themeToggle = document.getElementById('themeToggle');
+const currentTheme = localStorage.getItem('theme');
+
+function applyTheme(theme) {
+    if (theme === 'dark') {
+        document.body.classList.add('dark-mode');
+        if (themeToggle) themeToggle.textContent = '☀️';
+    } else {
+        document.body.classList.remove('dark-mode');
+        if (themeToggle) themeToggle.textContent = '🌙';
+    }
+}
+
+if (currentTheme) {
+    applyTheme(currentTheme);
+}
+
+if (themeToggle) {
+    themeToggle.addEventListener('click', function() {
+        const nextTheme = document.body.classList.contains('dark-mode') ? 'light' : 'dark';
+        applyTheme(nextTheme);
+        localStorage.setItem('theme', nextTheme);
+    });
+}
+
 // 平滑滚动
 const anchors = document.querySelectorAll('a[href^="#"]');
 anchors.forEach(anchor => {
